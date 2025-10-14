@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether - Eco Guardian App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🌎 Aether - Eco Guardian</h1>
+    <p id="badge">Badge: 🌱 Eco Beginner</p>
+  </header>
+
+  <main>
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="stats">
+        <div class="stat-card"><h3>Air Quality</h3><p id="airQuality">80%</p></div>
+        <div class="stat-card"><h3>Water Purity</h3><p id="waterPurity">90%</p></div>
+        <div class="stat-card"><h3>Temperature</h3><p id="temperature">25°C</p></div>
+        <div class="stat-card eco-score"><h3>Eco Score</h3><p id="ecoScore">0</p></div>
+      </div>
+
+      <div id="progressContainer">
+        <div id="progressBar"></div>
+      </div>
+
+      <div class="actions">
+        <button id="addActionBtn">✅ Add Eco Action</button>
+        <button id="dailyTipBtn">💡 New Eco Tip</button>
+      </div>
+
+      <p id="ecoFact">Loading eco fact...</p>
+      <p id="alert"></p>
+
+      <div id="actionHistory">
+        <h3>Recent Actions</h3>
+        <ul id="historyList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Badge Popup -->
+  <div id="badgePopup" class="hidden"></div>
+
+  <footer>
+  <p>Created by Aaron J David 🌱 | Science Exhibition 2025</p>
+  <p id="demoNote" style="font-size: 12px; color: #555; text-align: center; margin-top: 5px;">
+    ⚠️ Note: All values shown are demo values for prototype purposes only, not actual measurements.
+  </p>
+</footer>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

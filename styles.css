@@ -1,0 +1,121 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #b9fbc0, #a3c4f3);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #1b4332;
+}
+
+header {
+  background: #52b788;
+  color: white;
+  padding: 15px 10px;
+  border-radius: 0 0 20px 20px;
+}
+
+h1 {
+  margin: 5px;
+}
+
+#dashboard {
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stat-card {
+  width: 45%;
+  background: #e9f5db;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.eco-score {
+  background: #d8f3dc;
+  font-weight: bold;
+}
+
+.actions button {
+  background: #40916c;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin: 8px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  background: #2d6a4f;
+}
+
+#ecoFact {
+  font-style: italic;
+  margin-top: 15px;
+}
+
+#alert {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#progressContainer {
+  width: 80%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin: 15px auto;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #74c69d, #1b4332);
+  border-radius: 10px;
+  transition: width 0.5s;
+}
+
+/* Popup */
+#badgePopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: #1b4332;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-size: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: 999;
+}
+
+#badgePopup.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+footer {
+  margin-top: 30px;
+  padding: 10px;
+  color: #081c15;
+  font-size: 14px;
+}
