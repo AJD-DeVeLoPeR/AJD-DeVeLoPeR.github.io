@@ -3,54 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aether - Eco Guardian App</title>
+  <title>Aether 2.0 - Eco Guardian</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>🌎 Aether - Eco Guardian</h1>
-    <p id="badge">Badge: 🌱 Eco Beginner</p>
-  </header>
+  <!-- LOGIN / SIGNUP -->
+  <div id="authContainer">
+    <h1>🌎 Aether 2.0</h1>
+    <div id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="loginUser" placeholder="Username">
+      <button id="loginBtn">Login</button>
+      <p>or <span id="showSignup">Sign up</span></p>
+    </div>
+    <div id="signupForm" class="hidden">
+      <h2>Sign Up</h2>
+      <input type="text" id="signupUser" placeholder="Choose Username">
+      <button id="signupBtn">Sign Up</button>
+      <p>or <span id="showLogin">Login</span></p>
+    </div>
+  </div>
 
-  <main>
-    <section id="dashboard">
-      <h2>Dashboard</h2>
-      <div class="stats">
-        <div class="stat-card"><h3>Air Quality</h3><p id="airQuality">80%</p></div>
-        <div class="stat-card"><h3>Water Purity</h3><p id="waterPurity">90%</p></div>
-        <div class="stat-card"><h3>Temperature</h3><p id="temperature">25°C</p></div>
-        <div class="stat-card eco-score"><h3>Eco Score</h3><p id="ecoScore">0</p></div>
-      </div>
+  <!-- MAIN APP -->
+  <div id="appContainer" class="hidden">
+    <header>
+      <h1>🌎 Aether 2.0 - Eco Guardian</h1>
+      <p id="badge">Badge: 🌱 Eco Beginner</p>
+      <button id="logoutBtn">Logout</button>
+    </header>
 
-      <div id="progressContainer">
-        <div id="progressBar"></div>
-      </div>
+    <main>
+      <!-- Dashboard -->
+      <section id="dashboard">
+        <h2>Dashboard</h2>
+        <div class="stats">
+          <div class="stat-card"><h3>Air Quality</h3><p id="airQuality">80%</p></div>
+          <div class="stat-card"><h3>Water Purity</h3><p id="waterPurity">90%</p></div>
+          <div class="stat-card"><h3>Temperature</h3><p id="temperature">25°C</p></div>
+          <div class="stat-card eco-score"><h3>Eco Score</h3><p id="ecoScore">0</p></div>
+        </div>
 
-      <div class="actions">
-        <button id="addActionBtn">✅ Add Eco Action</button>
-        <button id="dailyTipBtn">💡 New Eco Tip</button>
-      </div>
+        <div id="progressContainer">
+          <div id="progressBar"></div>
+        </div>
 
-      <p id="ecoFact">Loading eco fact...</p>
-      <p id="alert"></p>
+        <div class="actions">
+          <button id="addActionBtn">✅ Add Eco Action</button>
+          <button id="dailyTipBtn">💡 New Eco Tip</button>
+          <button id="resetActionsBtn">🔄 Reset Actions</button>
+        </div>
 
-      <div id="actionHistory">
-        <h3>Recent Actions</h3>
-        <ul id="historyList"></ul>
-      </div>
-    </section>
-  </main>
+        <p id="ecoFact">Loading eco fact...</p>
+        <p id="alert"></p>
 
-  <!-- Badge Popup -->
-  <div id="badgePopup" class="hidden"></div>
+        <div id="actionHistory">
+          <h3>Recent Actions</h3>
+          <ul id="historyList"></ul>
+        </div>
+      </section>
 
-  <footer>
-  <p>Created by Aaron J David 🌱 | Science Exhibition 2025</p>
-  <p id="demoNote" style="font-size: 12px; color: #555; text-align: center; margin-top: 5px;">
-    ⚠️ Note: All values shown are demo values for prototype purposes only, not actual measurements.
-  </p>
-</footer>
+      <!-- Challenges -->
+      <section id="challengesSection">
+        <h2>🌟 Challenges</h2>
+        <ul id="challengesList">
+          <li><input type="checkbox" class="challengeItem"> Complete 3 eco actions today</li>
+          <li><input type="checkbox" class="challengeItem"> Recycle one item</li>
+          <li><input type="checkbox" class="challengeItem"> Share eco tip with friend</li>
+        </ul>
+      </section>
 
+      <!-- Monthly Planner -->
+      <section id="plannerSection">
+        <h2>🗓️ Monthly Planner</h2>
+        <ul id="plannerList">
+          <li><input type="checkbox" class="plannerItem"> Plant a tree</li>
+          <li><input type="checkbox" class="plannerItem"> Reduce water usage</li>
+        </ul>
+        <input type="text" id="plannerInput" placeholder="Add new task">
+        <button id="addPlannerBtn">Add Task</button>
+      </section>
+
+      <!-- Journal -->
+      <section id="journalSection">
+        <h2>📔 Journal / Diary</h2>
+        <textarea id="journalInput" placeholder="Write your eco thoughts..."></textarea>
+        <button id="saveJournalBtn">Save Entry</button>
+        <ul id="journalList"></ul>
+      </section>
+
+      <!-- Community Board -->
+       <!-- Community Board -->
+      <section id="communitySection">
+        <h2>🌐 Community Board</h2>
+        <input type="text" id="communityInput" placeholder="Share your eco achievement...">
+        <input type="file" id="communityImage" accept="image/*">
+        <button id="postCommunityBtn">Post</button>
+        <ul id="communityList"></ul>
+      </section>
+
+      <!-- Leaderboard -->
+      <section id="leaderboardSection">
+        <h2>🏆 Leaderboard</h2>
+        <ul id="leaderboardList"></ul>
+      </section>
+    </main>
+
+    <!-- Badge Popup -->
+    <div id="badgePopup" class="hidden"></div>
+
+    <footer>
+      <p>Created by Aaron J David 🌱 | Science Exhibition 2025</p>
+      <p id="demoNote">⚠️ Demo values only, not real measurements.</p>
+    </footer>
+  </div>
 
   <script src="app.js"></script>
 </body>
