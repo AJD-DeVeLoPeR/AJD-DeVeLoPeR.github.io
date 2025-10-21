@@ -12,26 +12,51 @@ header {
   color: white;
   padding: 15px 10px;
   border-radius: 0 0 20px 20px;
+  position: relative;
+}
+
+header button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 5px 10px;
+  background: #40916c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 h1 {
   margin: 5px;
 }
 
-#dashboard {
-  margin: 20px auto;
-  max-width: 600px;
-  padding: 20px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.hidden { display: none; }
+
+#authContainer, #appContainer { margin-top: 30px; }
+
+#authContainer input, #signupForm input {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.stats {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+#authContainer button, #signupForm button {
+  padding: 8px 12px;
+  background: #40916c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+main {
+  max-width: 700px;
+  margin: auto;
+}
+
+.stats { display: flex; flex-wrap: wrap; justify-content: space-around; }
 
 .stat-card {
   width: 45%;
@@ -42,10 +67,7 @@ h1 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.eco-score {
-  background: #d8f3dc;
-  font-weight: bold;
-}
+.eco-score { background: #d8f3dc; font-weight: bold; }
 
 .actions button {
   background: #40916c;
@@ -59,19 +81,10 @@ h1 {
   transition: 0.3s;
 }
 
-.actions button:hover {
-  background: #2d6a4f;
-}
+.actions button:hover { background: #2d6a4f; }
 
-#ecoFact {
-  font-style: italic;
-  margin-top: 15px;
-}
-
-#alert {
-  margin-top: 10px;
-  font-weight: bold;
-}
+#ecoFact { font-style: italic; margin-top: 15px; }
+#alert { margin-top: 10px; font-weight: bold; }
 
 #progressContainer {
   width: 80%;
@@ -81,7 +94,6 @@ h1 {
   margin: 15px auto;
   overflow: hidden;
 }
-
 #progressBar {
   height: 100%;
   width: 0%;
@@ -90,7 +102,22 @@ h1 {
   transition: width 0.5s;
 }
 
-/* Popup */
+section { margin: 20px 0; background:white; padding:15px; border-radius:15px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+
+section h2 { margin-top:0; }
+
+#plannerInput, #journalInput, #communityInput {
+  width: 70%;
+  padding: 5px;
+  margin: 5px;
+}
+
+section button { margin-top:5px; }
+
+ul { list-style: none; padding-left: 0; }
+
+li { margin: 5px 0; }
+
 #badgePopup {
   position: fixed;
   top: 50%;
@@ -107,15 +134,84 @@ h1 {
   transition: opacity 0.6s ease;
   z-index: 999;
 }
+#badgePopup.show { opacity: 1; pointer-events: all; }
 
-#badgePopup.show {
-  opacity: 1;
-  pointer-events: all;
+footer { margin-top: 30px; padding: 10px; color: #081c15; font-size: 14px; }
+
+#communityInput {
+  width: 60%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-footer {
-  margin-top: 30px;
-  padding: 10px;
-  color: #081c15;
-  font-size: 14px;
+#communityImage {
+  margin: 5px 0;
+}
+
+#postCommunityBtn {
+  background: #40916c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: 0.3s;
+}
+
+#postCommunityBtn:hover {
+  background: #2d6a4f;
+}
+
+#communityList {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+#communityList li img {
+  border-radius: 10px;
+  max-width: 150px;
+  margin-top: 5px;
+  display: block;
+}
+
+#communityList li {
+  background: #fff8dc; /* subtle yellow */
+  margin: 10px auto;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  max-width: 500px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+#communityList li:hover {
+  transform: translateY(-3px);
+}
+
+#communityList li img {
+  display: block;
+  margin: 10px 0 0 0;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#communityList li .username {
+  font-weight: bold;
+  color: #1b4332;
+  margin-bottom: 5px;
+}
+
+#communityList li .timestamp {
+  font-size: 12px;
+  color: #555;
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }
